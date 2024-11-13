@@ -1,0 +1,26 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  align-items: center;
+  width: 100%;
+}
+
+header{
+  background-color: black;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+footer{
+  background-color: black;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+
+
+
