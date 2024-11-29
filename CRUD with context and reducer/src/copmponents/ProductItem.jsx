@@ -16,6 +16,7 @@ function ProductItem({ product }) {
       <Price>{product.product_price}</Price>
       <Image src={product.url} alt={product.product_name} />
       <DeleteButton onClick={() => dispatch({type:'DELETE DATA', payload: product.id})}>DELETE</DeleteButton>
+      <AddButton onClick={() => dispatch({type:'ADD TO BAG', payload: product})}>ADD TO BAG</AddButton>
 
       <RedactButton onClick={() => {
         productName.current = product.product_name
@@ -67,6 +68,7 @@ const Image = styled.img``;
 
 const RedactButton = styled.button``;
 const DeleteButton = styled.button``;
+const AddButton = styled.button``;
 
 
 const RedactForm = styled.form``;
