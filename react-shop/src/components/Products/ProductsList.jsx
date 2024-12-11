@@ -18,7 +18,7 @@ function ProductsList() {
     
     return(
         <ul>
-            {stateProducts.products.map((item) => <ProductsItem key={item.id} {...item}/>)}
+            {stateProducts.products.map((item) => <ProductsItem key={item.id} obj={item}/>)}
         </ul>
     )
 }

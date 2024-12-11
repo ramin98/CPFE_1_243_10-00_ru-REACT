@@ -1,15 +1,18 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import {MyContext} from "../../App"
+import BagItem from "./BagItem"
 
 function BagList() {
-    let {stateBag} = useContext(MyContext)
+    let {stateBag, dispatchBag} = useContext(MyContext)
 
-    
+    useEffect(() => {
+          dispatchBag({type:'GET BAG'})
+    },[])
 
     
     return(
         <ul>
-            {stateBag.bag.map((item) => <ProductsItem key={item.id} {...item}/>)}
+            {stateBag.bag.map((item) => <BagItem key={item.id} {...item}/>)}
         </ul>
     )
 }
