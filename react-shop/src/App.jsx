@@ -1,8 +1,8 @@
 import { createContext, useReducer } from 'react'
 import './App.css'
-import { initialObjectProducts, productsReducer } from './reducers/productsReducer'
-import { bagReducer, initialObjectBag } from './reducers/bagReducer'
-import { initialObjectOrders, ordersReducer } from './reducers/ordersReducer'
+import { initialObjectProducts, productsReducer } from './reducers/reducerStates/productsReducer'
+import { bagReducer, initialObjectBag } from './reducers/reducerStates/bagReducer'
+import { initialObjectOrders, ordersReducer } from './reducers/reducerStates/ordersReducer'
 import Header from './components/Header'
 import MainComponent from './components/MainComponent'
 
@@ -22,8 +22,8 @@ function App() {
       stateOrders,
       dispatchOrders
     }}>
-      <Header/>
-      <MainComponent/>
+      <Header />
+      <MainComponent />
     </MyContext.Provider>
   )
 }
