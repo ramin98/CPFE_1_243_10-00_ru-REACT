@@ -1,12 +1,16 @@
-function ProductsItem({ product_name, product_description, product_price, url }) {
+import { useContext } from "react"
+import { MyContext } from "../../App"
+
+function ProductsItem(props) {
+    let {dispatchBag} = useContext(MyContext)
 
     return (
         <li>
-            <p>{product_name}</p>
-            <p>{product_description}</p>
-            <p>{product_price}</p>
-            <img src={url} alt={product_name} />
-            <button>ADD</button>
+            <p>{props.product_name}</p>
+            <p>{props.product_description}</p>
+            <p>{props.product_price}</p>
+            <img src={props.url} alt={props.product_name} />
+            <button onClick={() => dispatchBag({type:'ADD TO BAG', payload:props})}>ADD</button>
         </li>
     )
 }

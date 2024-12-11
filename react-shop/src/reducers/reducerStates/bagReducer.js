@@ -3,8 +3,11 @@ export let initialObjectBag = {
 }
 
 export function bagReducer(state, action) {
-    if(true){
-
+    if(action.type === 'ADD TO BAG'){
+           let bag = JSON.parse(localStorage.getItem('bag'))
+           bag.push(action.payload)
+           localStorage.setItem('bag', JSON.stringify(bag))
+           return {...state, bag: bag}
     }
     
     return state

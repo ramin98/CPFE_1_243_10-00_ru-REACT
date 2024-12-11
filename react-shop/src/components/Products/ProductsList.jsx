@@ -9,6 +9,10 @@ function ProductsList() {
     let {stateProducts, dispatchProducts} = useContext(MyContext)
 
     useEffect(() => {
+        if(!localStorage.getItem('bag')){
+            localStorage.setItem('bag', JSON.stringify([]))
+        }
+
         getProductsFetch(dispatchProducts)
     }, [])
     
