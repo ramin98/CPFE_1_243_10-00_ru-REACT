@@ -11,7 +11,10 @@ function BagItem(props) {
             <p>{props.product_description}</p>
             <p>{props.product_price}</p>
             <img src={props.url} alt={props.product_name} />
-            <button onClick={() => dispatchBag({type:'ADD TO BAG', payload:props})}>DELETE</button>
+            <button onClick={() => dispatchBag({type:'DELETE FROM BAG', payload:props.id})}>DELETE</button>
+            <button onClick={() => dispatchBag({type:'MINUS PRODUCT', payload:props.id})}>-</button>
+            <p>{props.count}</p>
+            <button onClick={() => dispatchBag({type:'PLUS PRODUCT', payload:props.id})}>+</button>
         </li>
     )
 }

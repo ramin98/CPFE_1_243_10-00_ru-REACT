@@ -10,7 +10,7 @@ function ProductsItem(props) {
             <p>{props.product_description}</p>
             <p>{props.product_price}</p>
             <img src={props.url} alt={props.product_name} />
-            <button onClick={() => dispatchBag({type:'ADD TO BAG', payload})}>ADD</button>
+            <button onClick={() => dispatchBag({type:'ADD TO BAG', payload: props})}>ADD</button>
         </li>
     )
 }
