@@ -44,6 +44,11 @@ export function bagReducer(state, action) {
         localStorage.setItem('bag', JSON.stringify(bag))
         return { ...state, bag: bag }
     }
+    else if (action.type === 'CLEAR BAG') {
+        localStorage.setItem('bag', JSON.stringify([]))
+
+        return { ...state, bag: [] }
+    }
 
     return state
 }
